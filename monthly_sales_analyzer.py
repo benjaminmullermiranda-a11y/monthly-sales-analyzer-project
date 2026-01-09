@@ -59,15 +59,17 @@ def days_above_threshold(data, product_key, threshold):
     return count
 
 
-def top_product(data):monthly-sales-analyzer-project
-"""Determines which product had the highest total sales in 30 days."""
+
+def top_product(data):
+    """Determines which product had the highest total sales in 30 days."""
+    # Paso 1: Calcular el total de cada producto
     total_a = total_sales_by_product(data, "product_a")
     total_b = total_sales_by_product(data, "product_b")
     total_c = total_sales_by_product(data, "product_c")
-
+    
+    # Paso 2: Encontrar el máximo y determinar cuál producto es
     if total_a > total_b and total_a > total_c:
         return "product_a"
-
     elif total_b > total_a and total_b > total_c:
         return "product_b"
     else:
